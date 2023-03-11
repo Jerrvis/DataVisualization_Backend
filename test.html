@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="connect">连接</button>
+  <button id="send">发送</button>
+  数据如下<br/>
+  <p id="msg"></p>
+  <script>
+    const connect = document.getElementById('connect')
+    const send = document.getElementById('send')
+    const msg = document.getElementById('msg')
+    let ws 
+    connect.onclick = ()=>{
+      ws = new WebSocket('ws://localhost:2346')
+      ws.onopen = ()=>{
+        console.log('连接成功')
+      }
+      ws.onclose = ()=>{
+        console.log('连接失败')
+      }
+      ws.onmessage = msg=>{
+        console.log('获得数据:',msg)
+      }
+    }
+    send.onclick = ()=>{
+      ws.send('hello from client')
+    }
+  </script>
+</body>
+</html>

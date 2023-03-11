@@ -1,0 +1,16 @@
+{
+  "name": "koa-ws",
+  "version": "1.0.0",
+  "description": "a backen use websocket",
+  "main": "app.js",
+  "scripts": {
+    "serve": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.14.1",
+    "ws": "^8.13.0"
+  }
+}
